@@ -48,16 +48,18 @@ public class GeneralActions {
         waitForContentLoad();
         driver.findElement(By.id("subtab-AdminCatalog")).click();
         waitForContentLoad();
-        driver.findElement(By.id("page-header-desc-configuration-add"));
+        driver.findElement(By.id("page-header-desc-configuration-add")).click();
         waitForContentLoad();
 
 
         //Fill info fields
         driver.findElement(By.id("form_step1_name_1")).sendKeys(newProduct.getName());
-        driver.findElement(By.id("form_step3_qty_0")).sendKeys(newProduct.getQty().toString());
-        driver.findElement(By.id("form_step2_price_ttc")).sendKeys(newProduct.getPrice());
+        driver.findElement(By.id("form_step1_qty_0_shortcut")).sendKeys(newProduct.getQty().toString());
+        driver.findElement(By.id("form_step1_price_ttc_shortcut")).sendKeys(newProduct.getPrice());
 
-        driver.findElement(By.id("form_step1_active")).click();
+        driver.findElement(By.xpath(
+                "/html/body[@class='adminproducts']/div[@id='main-div']/div[@class='content-div -notoolbar']/div[@class='row ']/div[@class='col-xs-12']/form[@id='form']/div[@class='product-footer']/div[@class='col-lg-5']/div[@class='switch-input']"))
+                .click();
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.name(""))).click();
         driver.findElement(By.xpath(
                 "/html/body[@class='adminproducts']/div[@id='main-div']/div[@class='content-div -notoolbar']/div[@class='row ']/div[@class='col-xs-12']/form[@id='form']/div[@class='product-footer']/div[@class='col-lg-6 text-lg-right']/input[@id='submit']")).
