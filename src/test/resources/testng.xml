@@ -3,8 +3,28 @@
 <suite name="Products Management" verbose="1" >
     <test name="Create New Product [Chrome]" >
         <!--configure test to execute testing script using Chrome browser-->
+        <parameter name="browser" value="chrome"/>
+        <parameter name="login" value="webinar.test@gmail.com"/>
+        <parameter name="password" value="Xcg7299bnSmMuRLp9ITw"/>
+        <classes>
+            <class name="myprojects.automation.assignment4.tests.CreateProductTest"/>
+        </classes>
     </test>
-
     <!--Prepare test for firefox and IE browsers-->
-
+    <test name="Create New Product [Firefox]">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="login" value="webinar.test@gmail.com"/>
+        <parameter name="password" value="Xcg7299bnSmMuRLp9ITw"/>
+        <classes>
+            <class name="myprojects.automation.assignment4.tests.CreateProductTest"/>
+        </classes>
+    </test>
+    <test name="Create New Product [IE]">
+        <parameter name="browser" value="ie"/>
+        <parameter name="login" value="webinar.test@gmail.com"/>
+        <parameter name="password" value="Xcg7299bnSmMuRLp9ITw"/>
+        <classes>
+            <class name="myprojects.automation.assignment4.tests.CreateProductTest"/>
+        </classes>
+    </test>
 </suite>
